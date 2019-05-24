@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Test</title>
+<link rel="stylesheet" type="text/css" media="all" href="style.css">
+<script>
+window.onload = startup;
+
+function startup(){
+    document.getElementById("btnThrow").onclick = roll;
+        //terninger
+    var dice = [0,0,0,0,0];
+        rollAll();
+    var checkCounter = 0;
+    var diceKast = 3;
+    document.getElementById("printKast").innerHTML = "Du har <strong>" + diceKast + "</strong> kast igjen";
+    
+    //Antall poeng
+    //Hvilken verdier har låst poeng, hvis låst status = false
+    var poengEnere = 0;
+    var statusEnere = true;
+    
+    var poengToere = 0;
+    var statusToere = true;
+    
+    var poengTreere = 0;
+    var statusTreere = true;
+    
+    var poengFirere = 0;
+    var statusFirere = true;
+    
+    var poengFemmere = 0;
+    var statusFemmere = true;
+    
+    var poengSeksere = 0;
+    var statusSeksere = true;
+    
+    var poengSum = 0;
+    var statusSum = true;
+    
+    var poengBonus = 0;
+    var statusBonus = true;
+    
+    var poengEttPar = 0;
+    var statusEttPar = true;
+    
+    var poengToPar = 0;
+    var statusToPar = true;
+    
+    var poengTreLike = 0;
+    var statusTreLike = true;
+    
+    var poengFireLike = 0;
+    var statusFireLike = true;
+    
+    var poengLitenStraight = 0;
+    var statusLitenStraight = true;
+    
+    var poengStorStraight = 0;
+    var statusStorStraight = true;
+    
+    var poengHus = 0;
+    var statusHus = true;
+    
+    var poengSjanse = 0;
+    var statusSjanse = true;
+    
+    var poengYatzy = 0;
+    var statusYatzy = true;    
+    
+    
+    //Kaster terningene
+function roll(){
+    
+    if(diceKast > 1 || diceKast == 1){
+        //Terning 1
+        if(document.getElementById("checkOne").checked) {
+
+        }
+        else    {
+          rollOne();
+        }
+        //Terning 2
+        if(document.getElementById("checkTwo").checked) {
+
+        }
+        else    {
+          rollTwo();
+        }
+        //Terning 3
+        if(document.getElementById("checkThree").checked) {
+
+        }
+        else    {
+            rollThree();
+        }
+        //Terning 4
+        if(document.getElementById("checkFour").checked) {
+
+        }
+        else    {
+           rollFour();
+        }
+        //Terning 5
+        if(document.getElementById("checkFive").checked) {
+        }
+        else    {
+           rollFive();
+        }
+    diceKast--;
+        
+    }
+    else{
+        alert("Du har " + diceKast + " kast igjen")
+    }    
+        
+    printDice();
+    checkCounter = 1;
+    
+    klikk();
+    check();
+    
+    document.getElementById("printKast").innerHTML = "Du har <strong>" + diceKast + "</strong> kast igjen";
+
+}
+    
+function rollAll(){
+    rollOne();   
+    rollTwo();
+    rollThree();
+    rollFour();
+    rollFive();
+    
+    printDice();
+}
+    
+    //Skriver ut terningene
+function printDice(){
+    
+    printClear();
+    
+    printImg(dice[0], "printOne");
+    printImg(dice[1], "printTwo");
+    printImg(dice[2], "printThree");
+    printImg(dice[3], "printFour");
+    printImg(dice[4], "printFive");
+    //document.getElementById("printOne").innerHTML = dice[0];
+    //document.getElementById("printTwo").innerHTML = dice[1];
+    //document.getElementById("printThree").innerHTML = dice[2];
+    //document.getElementById("printFour").innerHTML = dice[3];
+    //document.getElementById("printFive").innerHTML = dice[4];
+}
+    
+function printImg(dice, print){
+    var size = "75";    //Størrelse på terningene;
+    
+    var img1 = document.createElement("IMG");
+    img1.setAttribute("src", "1.gif");
+    img1.setAttribute("width", size );
+    
+    var img2 = document.createElement("IMG");
+    img2.setAttribute("src", "2.gif");
+    img2.setAttribute("width", size );
+    
+    var img3 = document.createElement("IMG");
+    img3.setAttribute("src", "3.gif");
+    img3.setAttribute("width", size );
+
+    var img4= document.createElement("IMG");
+    img4.setAttribute("src", "4.gif");
+    img4.setAttribute("width", size );
+    
+    var img5= document.createElement("IMG");
+    img5.setAttribute("src", "5.gif");
+    img5.setAttribute("width", size );
+    
+    var img6 = document.createElement("IMG");
+    img6.setAttribute("src", "6.gif");
+    img6.setAttribute("width", size );    
+    
+    if( dice == 1 ){
+    document.getElementById(print).appendChild(img1);
+    }
+    if( dice == 2 ){
+    document.getElementById(print).appendChild(img2);
+    }
+    if( dice == 3 ){
+    document.getElementById(print).appendChild(img3);
+    }
+    if( dice == 4 ){
+    document.getElementById(print).appendChild(img4);
+    }
+    if( dice == 5 ){
+    document.getElementById(print).appendChild(img5);
+    }
+    if( dice == 6 ){
+    document.getElementById(print).appendChild(img6);
+    }    
+}
+    
+function printClear(){
+    //Fjerner gamle terninger;
+    document.getElementById("printOne").innerHTML = "";
+    document.getElementById("printTwo").innerHTML = "";
+    document.getElementById("printThree").innerHTML = "";
+    document.getElementById("printFour").innerHTML = "";
+    document.getElementById("printFive").innerHTML = "";
+}
+
+//Slår terningene
+function rollOne(){
+    dice[0] = (Math.floor(Math.random() * 6) + 1);
+}
+ 
+function rollTwo(){
+    dice[1] = (Math.floor(Math.random() * 6) + 1);
+}
+
+function rollThree(){
+    dice[2] = (Math.floor(Math.random() * 6) + 1);
+}
+
+function rollFour(){
+    dice[3] = (Math.floor(Math.random() * 6) + 1);
+}
+
+function rollFive(){
+    dice[4] = (Math.floor(Math.random() * 6) + 1);
+}
+    
+    //Klikk lokker verdiene
+    var lockColor = "red";
+    
+function klikk(){   
+        //Del 1 av spill
+    document.getElementById("printEnere").onclick =     function() {
+                    if(checkCounter == 1){
+                        statusEnere = false;    
+                        document.getElementById("printEnere").style.backgroundColor = lockColor; checkCounter--;
+                        diceKastReset();
+                        diceUncheck();}
+                    else{
+                        alert("Error, You have already locked an value")
+                    }
+        };
+        
+    document.getElementById("printToere").onclick =     function() {
+                    if(checkCounter == 1){
+                        statusToere = false;    
+                        document.getElementById("printToere").style.backgroundColor = lockColor; checkCounter--;
+                        diceKastReset();
+                        diceUncheck();}
+                    else{alert("Error, You have already locked an value")};
+    };
+        
+    document.getElementById("printTreere").onclick =    function() {
+                    if(checkCounter == 1){
+                        statusTreere = false;   
+                        document.getElementById("printTreere").style.backgroundColor = lockColor; checkCounter--;
+                        diceKastReset();
+                        diceUncheck();}
+                    else{alert("Error, You have already locked an value")};
+    };
+        
+    document.getElementById("printFirere").onclick =    function() {
+                    if(checkCounter == 1){
+                        statusFirere = false;   
+                        document.getElementById("printFirere").style.backgroundColor = lockColor; checkCounter--;
+                        diceKastReset();
+                        diceUncheck();}
+                    else{alert("Error, You have already locked an value")};
+    };
+        
+    document.getElementById("printFemmere").onclick =   function() {
+                    if(checkCounter == 1){
+                        statuFemmere = false;   
+                        document.getElementById("printFemmere").style.backgroundColor = lockColor; checkCounter--;
+                        diceKastReset();
+                        diceUncheck();}
+                    else{alert("Error, You have already locked an value")};
+    };
+        
+    document.getElementById("printSeksere").onclick =   function() {
+                    if(checkCounter == 1){
+                        statusSeksere = false;  
+                        document.getElementById("printSeksere").style.backgroundColor = lockColor; checkCounter--;
+                        diceKastReset();
+                        diceUncheck();}
+                    else{alert("Error, You have already locked an value")};
+    };
+
+        //Del 2 av spill
+        document.getElementById("printettPar").onclick =    function() {
+                    if(checkCounter == 1){
+                        statusEttPar = false;   
+                        document.getElementById("printettPar").style.backgroundColor = lockColor; checkCounter--;
+                        diceKastReset();
+                        diceUncheck();}
+                    else{alert("Error, You have already locked an value")};
+        };
+        
+    document.getElementById("printtoPar").onclick =     function() {
+                    if(checkCounter == 1){
+                        statusToPar = false;    
+                        document.getElementById("printtoPar").style.backgroundColor = lockColor; checkCounter--;
+                        diceKastReset();
+                        diceUncheck();}
+                    else{alert("Error, You have already locked an value")}
+    };
+        
+    document.getElementById("printtreLike").onclick =   function() {
+                    if(checkCounter == 1){
+                        statusTreLike = false;  
+                        document.getElementById("printtreLike").style.backgroundColor = lockColor; checkCounter--;
+                        diceKastReset();
+                        diceUncheck();}
+                    else{alert("Error, You have already locked an value")}
+    };
+        
+    document.getElementById("printfireLike").onclick =  function() {
+                    if(checkCounter == 1){
+                        statusFireLike = false; 
+                        document.getElementById("printfireLike").style.backgroundColor = lockColor; checkCounter--;
+                        diceKastReset();
+                        diceUncheck();}
+                    else{alert("Error, You have already locked an value")}
+    };
+        
+    document.getElementById("printLstraight").onclick = function() {
+                    if(checkCounter == 1){
+                        statusLitenStraight = false;    
+                        document.getElementById("printLstraight").style.backgroundColor = lockColor; checkCounter--;
+                        diceKastReset();
+                        diceUncheck();}
+                    else{alert("Error, You have already locked an value")}
+    };
+        
+    document.getElementById("printSstraight").onclick = function() {
+                    if(checkCounter == 1){
+                        statusStorStraight = false;     
+                        document.getElementById("printSstraight").style.backgroundColor = lockColor; checkCounter--;
+                        diceKastReset();
+                        diceUncheck();}
+                    else{alert("Error, You have already locked an value")}
+    };
+        
+    document.getElementById("printHus").onclick =       function() {
+                    if(checkCounter == 1){
+                        statusHus = false;      
+                        document.getElementById("printHus").style.backgroundColor = lockColor; checkCounter--;
+                        diceKastReset();
+                        diceUncheck();}
+                    else{alert("Error, You have already locked an value")}
+    };
+        
+    document.getElementById("printSjanse").onclick =    function() {
+                    if(checkCounter == 1){
+                        statusSjanse = false;   
+                        document.getElementById("printSjanse").style.backgroundColor = lockColor; checkCounter--;
+                        diceKastReset();
+                        diceUncheck();}
+                    else{alert("Error, You have already locked an value")}
+    };
+        
+    document.getElementById("printYatzy").onclick =     function() {
+                    if(checkCounter == 1){
+                        statusYatzy = false;    
+                        document.getElementById("printYatzy").style.backgroundColor = lockColor; checkCounter--;
+                        diceKastReset();
+                        diceUncheck();}
+                    else{alert("Error, You have already locked an value")}
+    };
+}    
+
+function diceKastReset(){
+    diceKast = 3;
+    document.getElementById("printKast").innerHTML = "Du har <strong>" + diceKast + "</strong> kast igjen";
+}
+    
+function diceUncheck(){
+    //Unchecker terningene når en verdi er valgt;
+    document.getElementById("checkOne").checked = false;
+    document.getElementById("checkTwo").checked = false;
+    document.getElementById("checkThree").checked = false;
+    document.getElementById("checkFour").checked = false;
+    document.getElementById("checkFive").checked = false;
+    
+    rollAll();
+}    
+    
+function check(){
+    // Sjekker om poeng er låst, hvis ikke sjekk poeng utifra terninger
+        if (statusEnere == true){
+            poengEnere = enere();
+            document.getElementById("printEnere").innerHTML = poengEnere;
+        }
+
+        if  (statusToere == true){
+            poengToere = toere();
+            document.getElementById("printToere").innerHTML = poengToere;
+        }
+        if  (statusTreere == true){
+            poengTreere = treere();
+            document.getElementById("printTreere").innerHTML = poengTreere;
+        }
+        if  (statusFirere == true){
+            poengFirere = firere();
+            document.getElementById("printFirere").innerHTML = poengFirere;
+        }
+        if  (statusFemmere == true){
+            poengFemmere = femmere();
+            document.getElementById("printFemmere").innerHTML = poengFemmere;
+        }
+        if  (statusSeksere == true){
+            poengSeksere = seksere();
+            document.getElementById("printSeksere").innerHTML = poengSeksere;
+        }
+
+        //If førstedel ferdig, legg sammen, sjekk bonus poeng
+        poengSum = sum();
+        document.getElementById("printSum").innerHTML = poengSum;
+
+        poengBonus = bonus();
+        document.getElementById("printBonus").innerHTML = poengBonus;
+        //---------------------------------
+
+        if  (statusEttPar == true){
+            poengEttPar = ettPar();
+            document.getElementById("printettPar").innerHTML = poengEttPar;
+        }
+        if  (statusToPar == true){
+            poengToPar = topar();
+            document.getElementById("printtoPar").innerHTML = poengToPar;
+        }
+        if  (statusTreLike == true){
+            poengTreLike = treLike();
+            document.getElementById("printtreLike").innerHTML = poengTreLike;
+        }
+        if  (statusFireLike == true){
+            poengFireLike = fireLike();
+            document.getElementById("printfireLike").innerHTML = poengFireLike;
+        }
+        if  (statusLitenStraight == true){
+            poengLitenStraight = litenStraight();
+            document.getElementById("printLstraight").innerHTML = poengLitenStraight;
+        }
+        if  (statusStorStraight == true){
+            poengStorStraight = storStraight();
+            document.getElementById("printSstraight").innerHTML = poengStorStraight;
+        }
+        if  (statusHus == true){
+            poengHus = hus();
+            document.getElementById("printHus").innerHTML = poengHus;
+        }
+        if  (statusSjanse == true){
+            poengSjanse = sjanse();
+            document.getElementById("printSjanse").innerHTML = poengSjanse;
+        }
+        if  (statusYatzy == true){
+            poengYatzy = yatzy();
+            document.getElementById("printYatzy").innerHTML = poengYatzy;
+        }
+
+        //Kjør hvis alle verdier er lukket
+        if (statusEnere == false &&
+            statusToere == false &&
+            statusTreere == false &&
+            statusFirere == false &&
+            statusFemmere == false &&
+            statusSeksere == false &&
+            statusEttPar == false &&
+            statusToPar == false &&
+            statusTreLike == false &&
+            statusFireLike == false &&
+            statusLitenStraight == false &&
+            statusStorStraight == false &&
+            statusHus == false &&
+            statusSjanse == false &&
+            statusYatzy == false)
+        {    
+            alert("Finish");
+        }
+    document.getElementById("printTotal").innerHTML = total();
+}
+
+    
+  
+    
+function enere(){
+    var enereCounter = 0
+    for(var i = 0; i < 5; i++){
+        if(dice[i] === 1){
+            enereCounter++
+        }
+    }
+    return enereCounter;
+}    
+function toere(){
+    var toereCounter = 0
+    for(var i = 0; i < 5; i++){
+        if(dice[i] === 2){
+            toereCounter++
+        } 
+    } 
+    return toereCounter * 2;
+}
+function treere(){
+    var treereCounter = 0
+    for(var i = 0; i < 5; i++){
+        if(dice[i] === 3){
+            treereCounter++
+        }
+    }
+    return treereCounter * 3;
+}
+function firere(){
+    var firereCounter = 0
+    for(var i = 0; i < 5; i++){
+        if(dice[i] === 4){
+            firereCounter++
+        }
+    }
+    return firereCounter *4;
+}
+function femmere(){
+    var femmereCounter = 0
+    for(var i = 0; i < 5; i++){
+        if(dice[i] === 5){
+            femmereCounter++
+        }
+    }
+    return femmereCounter * 5;
+}
+function seksere(){
+    var seksereCounter = 0
+    for(var i = 0; i < 5; i++){
+        if(dice[i] === 6){
+            seksereCounter++
+        }
+    }
+    return seksereCounter *6;
+}    
+
+//-----
+    //Summerer antall enere til seksere.(første del av yatzy)
+function sum(){
+    var sum = poengEnere + poengToere + poengTreere + poengFirere + poengFemmere + poengSeksere;
+
+    return sum;
+}
+    //Sjekker om du får bonus
+function bonus(){
+    if(poengSum == 63 || poengSum > 63){
+        //Hvis sum er over 63 poeng, bonus på 50 poeng blir lagt til.
+        return 50;
+    }    
+    else{ 
+        return 0;
+    }
+}      
+//-----
+    
+//Finner hvor mange en får av alle verider.
+function antForekommst(){
+var diceAntall = [0,0,0,0,0,0];
+    for (var i = -1; i < 5; i++){    //antall terninger
+        for(var j = 0; j < 7; j++){  //Kjører 6x pga øyne på terning
+            if(dice[i] == j){
+                diceAntall[j-1]++
+            }
+        }
+    }    
+    return diceAntall;
+}    
+    
+    
+    
+function ettPar(){
+    var diceAntall = antForekommst();
+    var diceSum = [0,0,0,0,0,0];
+    var diceParSum = [0,0,0,0,0,0];
+    var par = 0;
+    
+    //Alle tall som er større enn 2 blir ganget med 2
+    //finner ut hva verdien er for 2 like.
+    for(var k = 0; k < 7; k++){     //ant øyne på terning 1-6
+        if(diceAntall[k-1] >= 2){
+            diceParSum[k-1] = k*2
+        }
+    }
+    
+    //Finner paret med størst verdi
+    for(var l = 0; l < 6; l++){  //antall terninger
+        if(par < diceParSum[l]){
+            par = diceParSum[l]
+        }
+    }
+    return par;
+}    
+    
+function topar(){   //Gjelder ikke 2 par av samme verdi.
+    var diceAntall = antForekommst();
+    var diceSum = [0,0,0,0,0,0];
+    var diceParSum = [0,0,0,0,0,0];
+    var toPar = 0;
+    
+    //Alle tall som er større enn 2 blir ganget med 2
+    //finner ut hva verdien er for 2 like.
+    for(var k = 0; k < 7; k++){ //Øyne på tering 1-6
+        if(diceAntall[k-1] >= 2){
+            diceParSum[k-1] = k*2
+        }
+    }
+    //Legger sammen summen av to par
+    for(var l = 0; l < 6; l++){
+        toPar += diceParSum[l]
+    }
+    
+    //Om toPar består av ett par, skriv ut 0;
+    //Sjekker om ettpar = 0
+    if(toPar == ettPar() || ettPar == 0){
+        toPar = 0;
+    }
+    return toPar;
+}
+    
+function treLike(){
+    var diceAntall = antForekommst();
+    var trelike = 0;
+    
+    for(var k = 0; k < 7; k++){ //Øyne på ternign 1-6
+        if(diceAntall[k-1] == 3 || diceAntall[k-1] > 3){
+            trelike = k*3;
+        }
+    }
+    
+    return trelike;
+}
+
+function fireLike(){
+    var diceAntall = antForekommst();
+    var firelike = 0;    
+    
+    //Alle tall som er større enn 4 blir ganget med 2
+    for(var i = 0; i < 7; i++){
+        if(diceAntall[i-1] == 4 || diceAntall[i-1] > 4){
+            firelike = i*4;
+        }
+    }
+    return firelike;
+}    
+    
+function litenStraight(){
+    var diceAntall = antForekommst();
+    var lStraight = 0;
+
+        //Hvis terningene viser 1-5
+        if(diceAntall[0] == 1 && 
+           diceAntall[1] == 1 && 
+           diceAntall[2] == 1 && 
+           diceAntall[3] == 1 && 
+           diceAntall[4] == 1){
+            
+            //Liten straight er 15poeng, sum av verdiene;
+            lStraight = 15;
+        }
+    return lStraight;
+}
+    
+function storStraight(){
+    var diceAntall = antForekommst();
+    var sStraight = 0;
+
+        //Hvis terningene viser 1-5
+        if(diceAntall[1] == 1 && 
+           diceAntall[2] == 1 && 
+           diceAntall[3] == 1 && 
+           diceAntall[4] == 1 && 
+           diceAntall[5] == 1){
+            
+            //Liten straight er 15poeng, sum av verdiene;
+            sStraight = 20;
+        }
+    return sStraight;
+}    
+    
+function hus(){
+    var diceAntall = antForekommst();
+    var sum1 = 0;
+    var sum2 = 0;
+    var hus = 0;
+    
+    for( var i = 0; i < 7; i++) {//Sjekker antall terninger
+        if (diceAntall[i-1] === 2){
+            sum1 = (diceAntall[i-1] * i);
+        }
+        if (diceAntall[i-1] === 3){
+            sum2 = (diceAntall[i-1] * i);
+        }
+    }
+
+    if( sum1 > 0 && sum2 > 0) {
+        hus = sum1 + sum2;
+    }    
+    return hus;
+}
+    
+function sjanse(){
+    var diceAntall = antForekommst();
+    
+    var sum = parseInt((diceAntall[0] * 1) + (diceAntall[1] * 2) + (diceAntall[2] * 3) + (diceAntall[3] * 4) + (diceAntall[4] * 5) + (diceAntall[5] * 6));
+
+    return sum;
+}
+    
+function yatzy(){
+    var diceAntall = antForekommst();
+    var sum = 0;
+    
+    for(var i = 0; i < 7; i++){
+        if(diceAntall[i-1] == 5){
+            sum = 50;
+        }
+    }
+
+    return sum;
+}    
+    
+function total(){
+    var total = 0;
+    //total = poengSum + poengBonus + poengEttPar + poengToPar + poengTreLike + poengFireLike + poengLitenStraight + poengStorStraight + poengHus + poengSjanse + poengYatzy;
+    
+    if  (statusEnere == false){
+        total += poengEnere;
+        
+    }
+    if  (statusToere == false){
+        total += poengToere;
+    }
+    if  (statusTreere == false){
+        total += poengTreere;
+    }
+    if  (statusFirere == false){
+        total += poengFirere;
+    }
+    if  (statusFemmere == false){
+        total += poengFemmere;   
+    }
+    if  (statusSeksere == false){
+        total += poengSeksere;
+    }
+    
+    //Sum; ovenfor;
+    total += poengBonus;
+    
+    if  (statusEttPar == false){
+        total += poengEttPar;
+    }
+    if  (statusToPar == false){
+        total += poengToPar;
+    }
+    if  (statusTreLike == false){
+        total += poengTreLike;
+    }       
+    if  (statusFireLike == false){
+        total += poengFireLike;   
+    }
+    if  (statusLitenStraight == false){
+        total += poengLitenStraight;
+    }
+    if  (statusStorStraight == false){
+        total += poengStorStraight;
+    }
+    if  (statusHus == false){
+        total += poengHus;
+    }
+    if  (statusSjanse == false){
+        total += poengSjanse;
+    }
+    if  (statusYatzy == false){
+        total += poengYatzy
+    }
+                               
+    return total;
+}
+        
+    
+}   
+</script>
+</head>
+    
+<body>
+    <div class="title">
+        <h1></h1>
+    </div>
+    <div class="box0">
+        <h1>Yatzy</h1>
+        <p>Oblig 4, Alternativ A</p>
+        <p>Du trykker på knappen Kast terning for å kaste ternigene,<br />
+            Du velger å beholde ternignene med checkboxene,<br />
+            Du velger hvor du skal plassere poengene dine, ved å klikke på poengsummen under poeng.<br />
+            Når du har lagt til poeng i alle boksene untatt sum, bonus og total er spillet fedig,<br />
+            Poengsummen din står under Total.
+        </p>
+        <a href="https://no.wikipedia.org/wiki/Yatzy">Spillet er basert på informasjon fra: https://no.wikipedia.org/wiki/Yatzy</a>
+    </div>
+
+    <!--Terninger-->
+    <div class="box1">
+        <table width="200" border="1">
+            <p>Terniger: </p>
+            <p id="printKast"></p>
+            <tr>
+                <td>
+                    <p id="printOne"></p>
+                    <input type="checkbox" id="checkOne">
+                </td>
+                <td>
+                    <p id="printTwo"></p>
+                    <input type="checkbox" id="checkTwo">
+                </td>
+                <td>
+                    <p id="printThree"></p>
+                    <input type="checkbox" id="checkThree">
+                </td>
+                <td>
+                    <p id="printFour"></p>
+                    <input type="checkbox" id="checkFour">
+                </td>
+                <td>
+                    <p id="printFive"></p>
+                    <input type="checkbox" id="checkFive">
+                </td>
+            </tr>
+        </table>
+        <button id="btnThrow">Kast terninger</button>
+
+            
+      <table width="200" border="1">
+          <tr>
+            <td><strong>Spiler</strong></td>
+            <td>Poeng</td>
+          </tr>
+          <tr>
+            <td>Enere</td>
+            <td>
+                <p id="printEnere"></p>
+              </td>
+          </tr>
+          <tr>
+            <td>Toere</td>
+            <td>
+                <p id="printToere"></p>
+              </td>
+          </tr>
+          <tr>
+            <td>Treere</td>
+            <td>
+                <p id="printTreere"></p>
+              </td>
+          </tr>
+          <tr>
+            <td>Firere</td>
+            <td>
+                <p id="printFirere"></p>
+              </td>
+          </tr>
+          <tr>
+            <td>Femmere</td>
+            <td>
+                <p id="printFemmere"></p>
+              </td>
+          </tr>
+          <tr>
+            <td>Seksere</td>
+            <td>
+                <p id="printSeksere"></p>
+              </td>
+          </tr>
+          <tr>
+            <td><strong>Sum</strong></td>
+            <td>
+                <p id="printSum"></p>
+              </td>
+          </tr>
+          <tr>
+            <td><strong>Bonus</strong></td>
+            <td>
+                <p id="printBonus"></p>
+              </td>
+          </tr>
+          <tr>
+            <td>Ett par</td>
+            <td>
+                <p id="printettPar"></p>
+              </td>
+          </tr>
+          <tr>
+            <td>To par</td>
+            <td>
+                <p id="printtoPar"></p>
+              </td>
+          </tr>
+          <tr>
+            <td>Tre like</td>
+            <td>
+                <p id="printtreLike"></p>
+              </td>
+          </tr>
+          <tr>
+            <td>Fire like</td>
+            <td>
+                <p id="printfireLike"></p>
+              </td>
+          </tr>
+          <tr>
+            <td>Liten straight</td>
+            <td>
+                <p id="printLstraight"></p>
+              </td>
+          </tr>
+          <tr>
+            <td>Stor straight</td>
+            <td>
+                <p id="printSstraight"></p>
+              </td>
+          </tr>
+          <tr>
+            <td>Hus</td>
+            <td>
+                <p id="printHus"></p>
+              </td>
+          </tr>
+          <tr>
+            <td>Sjanse</td>
+            <td>
+                <p id="printSjanse"></p>
+              </td>
+          </tr>
+          <tr>
+            <td>Yatzy</td>
+            <td>
+                <p id="printYatzy"></p>
+              </td>
+          </tr>
+          <tr>
+            <td><strong>Total</strong></td>
+            <td><p id="printTotal"></p></td>
+          </tr>
+      </table>
+    </div>
+
+</body>
+</html>
+
+
