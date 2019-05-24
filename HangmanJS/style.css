@@ -1,0 +1,192 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+@media screen and (min-width: 850px) {
+
+.title    {
+    width: 100%;  
+}
+
+body    {
+    width:80%;
+    height: 100%;
+    margin: auto;
+    background: #FFFFFF;
+}
+    
+.box0   {   
+    padding: 5px;
+}
+    
+.box1   {
+    background: rgb(226, 226, 226);
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 5px;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.box2   {
+    background: white;
+    padding: 5px;
+    height: 550px;
+    width: 700px;
+    float: left;
+}
+.box3   {
+    background: white;
+    padding: 5px;
+    min-width: inherit;
+    font-family: 'Droid Sans Mono', ;
+    padding: 5px;
+}
+    
+.box4   {
+    padding: 5px;
+    height: 550px;
+    width: 700px;
+    float: left;
+    z-index; -1; 
+    position: absolute; 
+}    
+.btn1   {
+    width: 45px;
+    font-family: 'Droid Sans Mono', ;
+    font-size: 20px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.btn2   {
+    width: 60px;
+    font-family: 'Droid Sans Mono', ;
+    font-size: 20px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}    
+.btnEasy   {
+    width: 80px;
+    font-family: 'Droid Sans Mono', ;
+    font-size: 15px;
+    font-weight: 900;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    background-color: limegreen;
+}
+.btnMedium   {
+    width: 80px;
+    font-family: 'Droid Sans Mono', ;
+    font-size: 15px;
+    font-weight: 900;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    background-color: yellow;
+}
+.btnHard   {
+    width: 80px;
+    font-family: 'Droid Sans Mono', ;
+    font-size: 15px;
+    font-weight: 900;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    background-color: red;
+}  
+.btnRest   {
+    width: 200px;
+    font-family: 'Droid Sans Mono', ;
+    font-size: 25px;
+    font-weight: 900;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}      
+    
+}
+
+
+@media screen and (max-width: 850px) {
+p{
+    font-size: 14px;
+}
+h1  {
+    font-size: 22px;
+    font-family: 'Droid Sans Mono', ;
+}
+h2  {
+    font-size: 20px;   
+}
+h3  {
+    font-size: 18px
+}
+
+body    {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background: #FFFFFF;
+}
+
+.box1   {
+    background: rgb(226, 226, 226);
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 2px;
+    height: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.box2   {
+    background: white;;
+    padding: 2px;
+    height: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.box3   {
+    background: white;
+    padding: 5px;
+    min-width: inherit;
+    font-family: 'Droid Sans Mono', ;
+    padding: 5px;
+}
+.box4   {
+    padding: 5px;
+    min-width: inherit;
+    float: left;
+    z-index; -1; 
+    position: absolute; 
+}     
+
+.btn1   {
+    width: 45px;
+    font-family: 'Droid Sans Mono', ;
+    font-size: 20px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.btnEasy   {
+    width: 80px;
+    font-family: 'Droid Sans Mono', ;
+    font-size: 15px;
+    font-weight: 900;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    background-color: limegreen;
+}
+.btnMedium   {
+    width: 80px;
+    font-family: 'Droid Sans Mono', ;
+    font-size: 15px;
+    font-weight: 900;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    background-color: yellow;
+}
+.btnHard   {
+    width: 80px;
+    font-family: 'Droid Sans Mono', ;
+    font-size: 15px;
+    font-weight: 900;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    background-color: red;
+}  
