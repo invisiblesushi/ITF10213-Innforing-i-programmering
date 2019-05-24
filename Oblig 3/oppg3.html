@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Test</title>
+<link rel="stylesheet" type="text/css" media="all" href="style.css">
+
+<script>
+window.onload = oppstart;
+
+function oppstart() {
+    var array = [8, 8, 93, 7, 83, 8, 44, 21, 66, 12, 5, 2, 87, 34, 23]
+        document.getElementById("utskrift").innerHTML = maks(array);
+        document.getElementById("utskrift1").innerHTML = sum(array);
+        document.getElementById("utskrift2").innerHTML = gjennomsnitt(array);
+        document.getElementById("utskrift0").innerHTML = array;
+        document.getElementById("btn").onclick = klikk;
+    function klikk(){   
+        document.getElementById("utskrift3").innerHTML = finnes(array);    
+    }
+
+    
+}
+    
+function maks(array){
+    var sum = array[0];
+    for(var i = 0; i < array.length; i++)   {
+        if( array[i] > sum)    {
+            sum = array[i];    
+        }
+        if( sum < array[i])    {
+            sum = sum; 
+        }
+    return sum;    
+    }
+}
+    
+    
+function sum(array){
+    var sum = 0;
+    for(var i = 0; i < array.length; i++)   {
+        sum += array[i]
+    }
+    return sum;
+}
+
+function gjennomsnitt(array)    {
+    var sum = 0;
+    for(var i = 0; i < array.length; i++)   {
+        sum += array[i]
+    }
+    var gjennomsnitt = sum / array.length;
+    return gjennomsnitt;
+}
+
+function finnes(array)  {
+    var input = parseInt(document.getElementById("txtInput").value);
+    var svar = "";
+    for(var j = 0; j < array.length; j++)   {
+        if(array[j] == input)   {
+                svar = "Ja verdien " + array[j] + " finnes i arrayen";
+                return svar;
+        }
+        else    {
+                svar = "Nei verdien " + array[j] + " finnes ikke i arrayen";
+                return svar;
+        }
+    }
+}
+    
+</script>
+</head>
+    
+<body>
+    <div class="title">
+        <h1>Informasjonsystemer, trinn 1, infprog Oblig3</h1>
+    </div>
+    <div class="box0">
+      <p>Oppgave 3</p>
+      <p>Vi kan også lage funksjoner som arbeider med arrayer (tar en array som parameter). Lag følgende 4 funksjoner som arbeider med arrayer av tall, som returnerer følgende: </p>
+      <ol>
+        <li>Finner største tallet i arrayen</li>
+        <li>Finner summen av arrayen</li>
+        <li>Finner gjennomsnittet av arrayen</li>
+        <li>Finner ut om ett bestemt tall (angies som parameter) er i arrayen eller ikke</li>
+      </ol>
+      <p>Vis også hvordan dere bruker funksjonene i noen små eksempler (her velger dere selv). Husk å være nøye med å velge fornuftige formater på returverdiene og hvilke parametre funksjonen skal ta inn </p>
+    </div>
+    <div class="box1">
+        Arrayen er :<p id="utskrift0">utskrift</p>
+        <p>&nbsp;</p>
+        <p>Finner største tallet i arrayen</p>
+        <p id="utskrift"</p>
+        <p>&nbsp;</p>
+        <p>Finner summen av arrayen</p>
+        <p id="utskrift1"></p>
+        <p>&nbsp;</p>
+        <p>Finner gjennomsnittet av arrayen</p>
+        <p id="utskrift2"></p>
+        <p>&nbsp;</p>
+        <p>Finner ut om ett bestemt tall (angies som parameter) er i arrayen eller ikke</p>
+        
+        <input id="txtInput"></input>
+        <button id="btn">Finn ut</button>
+        <p id="utskrift3"></p>
+</div>
+</body>
+</html>
+
+

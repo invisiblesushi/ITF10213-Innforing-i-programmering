@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Test</title>
+<link rel="stylesheet" type="text/css" media="all" href="style.css">
+<script>
+window.onload = oppstart;
+
+function oppstart() {
+
+    
+function InnenforInterval(tall, fra, til)   {
+
+    
+    if(fra <= tall && tall <= til)    {
+        return true;
+    }
+    else    {
+        return false;    
+    }    
+}
+
+    one();
+    document.getElementById("btn1").onclick = two;
+function one()  {    
+    if(InnenforInterval(5, 1, 10) == true) {
+        document.getElementById("utskrift").innerHTML += "Tallet " + 5 + " er innenfor intervalet." + "</br>"
+    }
+    else    {
+        document.getElementById("utskrift").innerHTML += "Tallet " + 5 + " er ikke innenfor intervalet." + "</br>"  
+    }
+}
+    
+function two()  {
+    if(InnenforInterval(document.getElementById("numInput").value, 1, 10) == true) {
+        document.getElementById("utskrift2").innerHTML += "Tallet " + document.getElementById("numInput").value + " er innenfor intervalet." + "</br>"
+    }
+    else    {
+        document.getElementById("utskrift2").innerHTML += "Tallet " + document.getElementById("numInput").value + " er ikke innenfor intervalet." + "</br>"  
+    }    
+    
+    
+}
+    
+    
+}
+    
+
+    
+    
+
+</script>
+</head>
+    
+<body>
+    <div class="title">
+        <h1>Informasjonsystemer, trinn 1, infprog Oblig3</h1>
+    </div>
+    <div class="box0">
+      <h3>Oppgave 2 </h3>
+      <p>Lag ferdig en funksjon som sjekker om et tall er innenfor et intervall (returnerer en boolean). Lag så 2-3 utskrifter, der denne funksjonen er i bruk. <br>
+      <em>function InnenforInterval(tall, fra, til) </em></p>
+    </div>
+    <div class="box1">
+        <p>InnenforInterval(5, 1, 10)</p>
+        <p id="utskrift"></p></br>
+        <p>Skriv inn et tall, og sjekk om det er innenfor intervalet.</p>
+        <input type="number" id="numInput"></input>
+        <button id="btn1">Sjekk</button>
+        <p id="utskrift2"></p>
+    </div>
+</body>
+</html>
+
+
