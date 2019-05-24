@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Test</title>
+<script>
+	
+window.onload = oppstart;
+ 
+function oppstart() {
+	document.getElementById("knappplus").onclick = klikkplus;
+    document.getElementById("knappminus").onclick = klikkminus;
+    document.getElementById("knappgange").onclick = klikkgange;
+    document.getElementById("knappdele").onclick = klikkdele;
+}
+
+function klikkplus() {
+    var tall1 = parseInt(document.getElementById("txtTall1").value);
+    var tall2 = parseInt(document.getElementById("txtTall2").value);
+    var sum = tall1 + tall2;
+    
+    document.getElementById("utskrift").innerHTML = sum;
+}
+function klikkminus() {
+    var tall1 = parseInt(document.getElementById("txtTall1").value);
+    var tall2 = parseInt(document.getElementById("txtTall2").value);
+    var sum = tall1 - tall2;
+    
+    document.getElementById("utskrift").innerHTML = sum;
+}
+function klikkgange() {
+    var tall1 = parseInt(document.getElementById("txtTall1").value);
+    var tall2 = parseInt(document.getElementById("txtTall2").value);
+    var sum = tall1 * tall2;
+    
+    document.getElementById("utskrift").innerHTML = sum;
+}
+function klikkdele() {
+    var tall1 = parseInt(document.getElementById("txtTall1").value);
+    var tall2 = parseInt(document.getElementById("txtTall2").value);
+    var sum = tall1 / tall2;
+    
+    document.getElementById("utskrift").innerHTML = sum;
+}
+	
+</script>
+<style>
+    
+</style>
+</head>
+<body>
+    <h1>Informasjonsystemer, trinn 1</h1>
+    <div>
+        <h2>Oppgave 4</h2>
+        <p>Lag et skjema der du kan skrive inn to tall i to tekstbokser, og så få ut summen(+), differansen(-), produktet(*) og kvotienten(/) når man trykker på en "beregn"-knapp. </p>
+        
+	
+   
+   Tall 1: <input type="text" id="txtTall1" />
+   Tall 2: <input type="text" id="txtTall2" />
+   <button id="knappplus" type="button"> + </button>
+   <button id="knappminus" type="button"> - </button>
+   <button id="knappgange" type="button"> * </button>
+   <button id="knappdele" type="button"> / </button>
+   <p id="utskrift"></p>
+        
+    
+    
+    </div>
+
+    
+</body>
+</html>
+
+

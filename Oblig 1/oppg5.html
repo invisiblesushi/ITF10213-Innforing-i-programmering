@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Test</title>
+<script>
+	
+window.onload = oppstart;
+ 
+function oppstart() {
+	document.getElementById("knapp").onclick = klikk;
+}
+
+function klikk() {
+    var navn = parseInt(document.getElementById("txtNavn").value.length);
+    var pass = parseInt(document.getElementById("txtPass").value.length);
+    
+    if( (navn < 1 ) || pass <1 )    {
+		var resultat = "Ett eller flere felt mangler, Prøv igjen";
+	}
+	else{
+		var resultat = "Takk for registreing";
+	}
+	
+    alert(resultat);    
+}
+</script>
+<style>
+    
+</style>
+</head>
+<body>
+    <h1>Informasjonsystemer, trinn 1</h1>
+    <div>
+        <h2>Oppgave 5</h2>
+        <p>Lag et skjema for å opprette en bruker på en nettside bestående av felter for ønsket brukernavn, passord og en registrer knapp. Når man trykker knappen skal programmet sjekke om man har fylt ut feltene.</p>
+        <ul>Om ett eller begge feltene ikke inneholder noe skal du gi brukeren beskjed om dette.</ul>
+        <ul>Om feltene er fylt ut skal du takke brukeren for registreringen.</ul>
+        Brukernavn: 
+        <input type="text" id="txtNavn" />
+        Passord: 
+        <input type="text" id="txtPass" />
+   <button id="knapp" type="button">Registrer</button>
+   <p id="utskrift"></p>
+        
+    
+    
+    </div>
+
+    
+</body>
+</html>
+
+

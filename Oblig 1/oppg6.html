@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Test</title>		
+<script>
+    window.onload = oppstart;
+    function oppstart () {
+        document.getElementById("regKnapp").onclick = klikk;
+}
+    function klikk() {
+        var navn = document.getElementById("navn").value;
+		var pass  = document.getElementById("pass").value;
+		var gjentapass = document.getElementById("gjentapass").value;
+					
+		if(navn == ""){
+        document.getElementById("utskrift").innerHTML ="skriv inn brukernavn";
+		}
+		else if (pass == ""){
+		ocument.getElementById("utskrift").innerHTML = "skriv inn passord";
+		}
+		else if (gjentapass == ""){
+		ocument.getElementById("utskrift").innerHTML = "gjenta passord"
+		}
+		else if (gjentapass != pass){
+		ocument.getElementById("utskrift").innerHTML = "dine passord er ikke like";
+		}
+		else  
+		ocument.getElementById("utskrift").innerHTML = ("takk du er registrert");
+				
+		}
+</script>
+</head>
+<body>
+        <h1>Informasjonsystemer, trinn 1</h1>
+    <div>
+        <h2>Oppgave 6</h2>
+        <p>Lag et skjema for å opprette en bruker på en nettside bestående av felter for ønsket brukernavn, passord, passordbekreftelse og en registrer knapp. Når man trykker knappen skal programmet sjekke om man har fylt ut feltene og at passordet i passordfeltene er like. </p>
+        <ul>Om ett eller begge feltene ikke inneholder noe skal du gi brukeren beskjed om hvilke felter som ikke er fylt ut.</ul>
+        <ul>Om brukeren ikke har skrevet inn passordet likt i feltene skal du gi en beskjed om dette</ul>
+        <ul>Om feltene er korrekt fylt ut skal du takke brukeren for registreringen.</ul>
+			
+        Username: <input type="text" id="navn" placeholder="brukernavn" />
+		Password: <input type="text" id="pass" placeholder="passord" />
+		Repeat Password: <input type="text" id="gjentapass" placeholder="gjenta passord" />
+		<button id="regKnapp" type="button">Register</button>
+		<p id="utskrift"></p>
+</body>
+</html>
+
+

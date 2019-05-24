@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Test</title>
+<script>
+    function ShowHide(id) {
+       var showhide1 = document.getElementById(id);
+       if(showhide1.style.display == 'block')
+          showhide1.style.display = 'none';
+       else
+          showhide1.style.display = 'block';
+    }
+</script>
+<style>
+    
+</style>
+</head>
+<body>
+    <h1>Informasjonsystemer, trinn 1</h1>
+    <div>
+        <h2>Oppgave 10</h2>
+        <p>Lag en knapp som ved klikk viser et tekstfelt om tekstfeltet ikke synes fra før, om tekstfeltet er synlig skal det fjernes. Dere skal ikke manipulere css når dere gjør dette. <a href="http://www.w3schools.com/js/js_htmldom_document.asp">http://www.w3schools.com/js/js_htmldom_document.asp</a> (dokumentasjon)</p>
+        
+            <button onclick="ShowHide('div1');" type="button">Show/Hide</button>
+        
+            <div id="div1">
+                <input type="text" id="txtbox" />
+            </div>
+    </div>
+
+    
+</body>
+</html>
+
+

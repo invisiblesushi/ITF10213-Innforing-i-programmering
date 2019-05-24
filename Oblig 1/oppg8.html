@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Test</title>
+<script>
+window.onload = oppstart;
+    
+function oppstart() {
+
+	document.getElementById("knapp").onclick = klikket;
+}
+function klikket() {
+    var vekt = parseInt(document.getElementById("vekt").value);
+    var hoydeCm = parseInt(document.getElementById("hoyde").value);
+    var hoyde = hoydeCm / 100;
+    var bmiresult = parseInt(vekt/(hoyde*hoyde)).toFixed(0);
+    
+    document.getElementById("utskrift").innerHTML = bmiresult;   
+}
+</script>
+</head>
+<body>
+	<h2>Oppgave 8</h2>
+    <p>Lag en kalkulator som utfører beregninger basert på brukerdata. </p>
+    <p>For eksempel:  BMI </p>
+   
+   vekt: <input type="text" id="vekt" />
+   høyde: <input type="text" id="hoyde" />
+   <button id="knapp" type="button">Beregn</button>
+   <p id="utskrift"></p>
+    
+    <img src="img/bmi.jpg" width="600px">
+</body>
+</html>
+
+

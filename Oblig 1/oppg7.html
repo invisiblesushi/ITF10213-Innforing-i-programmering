@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Test</title>		
+<script>
+    window.onload = oppstart;
+    function oppstart () {
+        document.getElementById("regKnapp").onclick = klikk;
+}
+    function klikk() {
+        var navn = document.getElementById("navn").value;
+		var pass  = document.getElementById("pass").value;
+		var gjentapass = document.getElementById("gjentapass").value;
+        var alder = document.getElementById("alder").value;
+					
+		if(navn == ""){
+        document.getElementById("utskrift").innerHTML ="skriv inn brukernavn";
+		}
+		else if (pass == ""){
+		document.getElementById("utskrift").innerHTML = "skriv inn passord";
+		}
+		else if (gjentapass == ""){
+		document.getElementById("utskrift").innerHTML = "gjenta passord"
+		}
+		else if (gjentapass != pass){
+		document.getElementById("utskrift").innerHTML = "dine passord er ikke like";
+		}
+		else if (alder == ""){
+		document.getElementById("utskrift").innerHTML = "skriv inn alder";
+		}
+        else if (alder < 18)
+        document.getElementById("utskrift").innerHTML = "Du er under 18år.";
+        
+		else 
+		document.getElementById("utskrift").innerHTML = ("takk du er registrert");
+				
+		}
+</script>
+</head>
+<body>
+        <h1>Informasjonsystemer, trinn 1</h1>
+    <div>
+        <h2>Oppgave 7</h2>
+        <p>Lag et skjema for å opprette en bruker på en nettside bestående av felter for ønsket brukernavn, passord, passordbekreftelse og en registrer knapp. Når man trykker knappen skal programmet sjekke om man har fylt ut feltene og at passordet i passordfeltene er like. </p>
+        <ul>Om ett eller begge feltene ikke inneholder noe skal du gi brukeren beskjed om hvilke felter som ikke er fylt ut.</ul>
+        <ul>Om brukeren ikke har skrevet inn passordet likt i feltene skal du gi en beskjed om dette.</ul>
+        <ul>Om brukeren er under 18 år skal du gi en passende tilbakemelding ang dette.</ul>
+        <ul>Om feltene er korrekt fylt ut skal du takke brukeren for registreringen.</ul>
+			
+        brukernavn: <input type="text" id="navn" placeholder="brukernavn" />
+		passord: <input type="text" id="pass" placeholder="passord" />
+		gjenta passord: <input type="text" id="gjentapass" placeholder="gjenta passord" />
+        alder: <input type="text" id="alder" placeholder="alder" />
+		<button id="regKnapp" type="button">Register</button>
+		<p id="utskrift"></p>
+</body>
+</html>
+
+
