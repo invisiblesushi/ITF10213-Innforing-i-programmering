@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Test</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script>
+window.onload = oppstart;
+function oppstart(){
+    document.getElementById("btn1").onclick = klikk;
+}
+    
+function klikk()    {
+    var navn = document.getElementById("txtNavn").value;
+    var antall = document.getElementById("txtAntall").value;
+    var utskrift = "";
+    
+    for (var i=0 ; i < antall ; i++)    {
+        utskrift += navn + "</br>";
+        document.getElementById("utskrift").innerHTML = utskrift;
+        
+    }
+}
+    
+</script>
+</head>
+    
+<body>
+    <div class="header">
+        <h1>Informasjonsystemer, trinn 1, infprog Oblig2</h1>
+        <h2>Oppgave 1</h2>
+        <p>Lag to tekstbokser og en knapp. Når man trykker på knappen skal teksten i den første tekstboksen skrives ut så mange ganger (linje for linje) som man skrev et tall i den andre tekstboksen.</p>
+    </div>
+
+    <div class="box1">
+        Navn: <input type="text" id="txtNavn" />
+        Antall ganger: <input type="text" id="txtAntall" />
+        
+        <button type="button" id="btn1">Skriv ut</button>
+        
+        <p id="utskrift"></p>
+        
+    </div>
+    
+</body>
+</html>
+
+

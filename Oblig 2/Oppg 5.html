@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Test</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script>
+window.onload = oppstart;
+function oppstart(){
+    var antall = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,20,31];
+    var dag = ["ma","ti","on","to","fr","lø","sø"]
+    
+    document.getElementById("utskrift").innerHTML += dag[0] + " " + dag[1] + " " + dag[2] + " " + dag[3] + " " + dag[4] + " " + dag[5] + " " + dag[6] + "<br/>";
+    
+    for (var i = 0; i < antall.length; i++) {
+            if ( i % 7 === 0 ) {
+                document.getElementById("utskrift").innerHTML += "<br/>" + antall[i] + " ";
+            }
+            else {
+                document.getElementById("utskrift").innerHTML += antall[i] + " ";    
+            }
+            
+    }
+}
+    
+</script>
+</head>
+    
+<body>
+    <div class="header">
+        <h1>Informasjonsystemer, trinn 1, infprog Oblig2</h1>
+        <h2>Oppgave 5 (Nøtt - alle skal gjøre et forsøk, men ikke sikkert alle kommer helt i mål)</h2>
+        <p>Lag en webside der man kan skrive ut en kalender på følgende form:        </p>
+        <table width="200" border="1">
+          <tr>
+            <td>ma</td>
+            <td>ti</td>
+            <td>on</td>
+            <td>to</td>
+            <td>fr</td>
+            <td>lø</td>
+            <td>sø</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+          </tr>
+          <tr>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>31</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+        <p>Man skal her kunne oppgi hvilken ukedag kalenderen skal begynne på, og hvor mange dager det skal være i måneden.</p>
+        <p>TIPS: Benytt her en for-løkke og sett inn en &lt;br /&gt; på strategiske plasser ved å benytte bl.a. teller%7===0 som en test. For å få lik avstand mellom tegnene, så benytt fonten courier new eller lignende.</p>
+    </div>
+
+    <div class="box1">
+      <p id="utskrift"></p>
+        
+    </div>
+    
+</body>
+</html>
+
+

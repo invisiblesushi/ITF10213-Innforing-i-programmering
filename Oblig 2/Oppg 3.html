@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Test</title>
+<link rel="stylesheet" type="text/css" media="all" href="style.css">
+<script>
+window.onload = oppstart;
+function oppstart(){
+    document.getElementById("btn1").onclick = klikk;
+}
+    
+function klikk()    {
+    var belop = parseInt(document.getElementById("txtBelop").value);
+    var rente = parseInt(document.getElementById("txtRente").value);
+    var aar = parseInt(document.getElementById("txtaar").value);
+    var totalrente
+    
+    document.getElementById("utskrift").innerHTML= "";
+    
+    for (var i=0 ; i < aar ; i++)    {
+        document.getElementById("utskrift").innerHTML += "Etter " + parseInt( i + 1) +" år har du " + (belop *= 1+rente/100).toFixed(2) + " på banken" + "<br />";        
+    }
+}
+    
+</script>
+</head>
+    
+<body>
+    <div class="title">
+        <h1>Informasjonsystemer, trinn 1, infprog Oblig2</h1>
+    </div>
+    <div class="box0">
+        <h2>Oppgave 3</h2>
+        <p>Lag et skjema som tar i mot et pengebeløp, en rentesats og et antall år. Lag deretter en for-løkke som printer ut linjer på formen:</p>
+        <ul>Etter 1 år har du xxx penger på banken.</ul>
+        <ul>Etter 2 år har du xxx penger på banken.</ul>
+        <ul>...</ul>
+        <ul>Etter yyy år har du xxx penger på banken.</ul>
+    </div>
+
+    <div class="box1">
+        Beløp: <input type="number" id="txtBelop">
+        Rente i %: <input type="number" id="txtRente">
+        Antall år: <input type="number"id="txtaar">
+        <button type="button" id="btn1">Beregn</button>
+        <p id="utskrift">UTSKRIFT HER</p>
+
+    </div>
+</body>
+</html>
+
+

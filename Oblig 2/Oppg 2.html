@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Test</title>
+<link rel="stylesheet" type="text/css" media="all" href="style.css">
+<script>
+window.onload = oppstart
+    function oppstart() {
+        forlengs();
+        baklengs();
+        delto();
+        deltre();
+        partall();
+        oddtall();
+        posneg();    
+    }
+    
+    function forlengs() { 
+        document.getElementById("forUt").innerHTML = "";
+        for (var forlengs=0; forlengs < 101; forlengs++)
+            if( forlengs === 0 ) {
+                document.getElementById("forUt").innerHTML += forlengs;
+            }
+            else    {
+                document.getElementById("forUt").innerHTML += ", " + forlengs;   
+            }
+    }
+    
+    
+    function baklengs() { 
+        document.getElementById("bakUt").innerHTML= "";
+        for (var baklengs=100; baklengs > -1; baklengs--)
+            if( baklengs === 100 ) {
+                document.getElementById("bakUt").innerHTML += baklengs;
+            }
+            else    {
+                document.getElementById("bakUt").innerHTML += ", " + baklengs;   
+            }
+    }
+
+    
+    function delto() { 
+        document.getElementById("deltoUt").innerHTML = "";
+        for (var delto=0; delto < 101; delto++)
+            if( delto === 0 ) {
+                document.getElementById("deltoUt").innerHTML += delto;
+            }
+            else    {
+                document.getElementById("deltoUt").innerHTML += " " + delto / 2;   
+            }
+    }   
+    
+    
+    function deltre() { 
+        document.getElementById("deltreUt").innerHTML = "";
+        for ( var talltre = 1 ; talltre < 100; talltre++)
+            if (talltre % 3 === 0)  {
+                    document.getElementById("deltreUt").innerHTML += talltre + ", ";
+            }
+    }
+
+
+    function partall()  {
+        document.getElementById("parUt").innerHTML = "";
+        for( var partall = 0; partall < 101; partall++ )
+            if( partall === 100 )   {
+                document.getElementById("parUt").innerHTML += partall;
+            }
+            else    {
+                document.getElementById("parUt").innerHTML += partall + ", ";    
+            }
+    }
+    
+    
+    function oddtall()  {
+        document.getElementById("oddUt").innerHTML = "";
+        for( var oddtall = 0; oddtall < 100; oddtall++ ) {
+            if( oddtall % 2 === 1 ) {
+                document.getElementById("oddUt").innerHTML += oddtall + " ,"
+            }
+        }
+    }
+    
+    
+    function posneg()   {
+        document.getElementById("posnegUt").innerHTML = "";
+        for( var posnegtall = 0; posnegtall < 101; posnegtall ++)
+            if ( posnegtall % 2 === 1 )   {
+                document.getElementById("posnegUt").innerHTML += " -" + posnegtall + ",";          
+            }
+            else    {
+                document.getElementById("posnegUt").innerHTML += " " + posnegtall + ",";
+            }
+    
+    }
+    
+</script>
+</head>
+    
+<body>
+    <div class="title">
+        <h1>Informasjonsystemer, trinn 1, infprog Oblig2</h1>
+    </div>
+    <div class="box0">
+        <h2>Oppgave 2</h2>
+        <p>Lag websider som skriver ut lister med tall mellom 0 og 100 etter følgende regler:</p>  
+        <li>Forlengs: 0,1,2,...,98,99,100</li>
+        <li>Baklengs: 100,99,98,...,1,0</li>
+        <li>Delt på 2: 0,0.5,...,49,49.5,50</li>
+        <li>Kun de som er delige på 3: 3,6,9...99 (Tips: Her kan man prøve %-operatoren)</li>
+        <li>Partall: 2,4,6,8,...98,100</li>
+        <li>Oddetall: 1,3,5,...,97,99</li>
+        <li>Annenhvert tall positivt og negativt: 0,-1,2,-3,4,-5,...,-99,100</li>
+    </div>
+
+    <div class="box1">
+        <h3>Forlengs</h3>
+
+        <p id="forUt"></p>
+    </div>
+    
+    <div class="box1">
+        <h3>Baklengs</h3>
+
+        <p id="bakUt"></p>
+    </div>
+    
+    <div class="box1">
+        <h3>Delt på 2</h3>
+
+        <p id="deltoUt"></p>
+    </div>
+    
+    <div class="box1">
+        <h3>Kun de som er delige på 3</h3>
+
+        <p id="deltreUt"></p>
+    </div>
+        
+    <div class="box1">
+        <h3>Partall</h3>
+
+        <p id="parUt"></p>
+    </div>
+    
+    <div class="box1">
+        <h3>Oddetall</h3>
+
+        <p id="oddUt"></p>
+    </div>
+    
+    <div class="box1">
+        <h3>annenhvert tall positiv og negativ</h3>
+
+        <p id="posnegUt"></p>
+    </div>
+    
+    
+    
+</body>
+</html>
+
+

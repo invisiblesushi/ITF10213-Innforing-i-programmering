@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Test</title>
+<link rel="stylesheet" type="text/css" media="all" href="style.css">
+<script>
+window.onload = oppstart;
+    
+function oppstart(){
+    document.getElementById("btn").onclick = click;
+}
+function click()    {
+	var inputTxt = document.getElementById("txtInput").value;
+	document.getElementById("print").innerHTML = "";
+	var num = [0,1,2,3,4,5,6,7,8,9];
+	var totalNum = [0,0,0,0,0,0,0,0,0,0];
+	var txtSplit = inputTxt.split(",");
+	var txtSlice = txtSplit.slice();
+	
+	for (var x = 0; x < txtSplit.length; x++){
+		for(var y=0; y <num.length; y++){
+			if(txtSplit[x] == num[y]){
+			totalNum[y] = totalNum[y] + 1;
+				}
+			}
+		}
+		for (var i = 0; i < num.length; i++){
+			document.getElementById("print").innerHTML += num[i] + " er gjentatt " + totalNum[i] + " gang(er) <br />";
+		}
+}
+    
+    
+</script>
+</head>
+    
+<body>
+    <div class="title">
+        <h1>Informasjonsystemer, trinn 1, infprog Oblig2</h1>
+    </div>
+    <div class="box0">
+        <h2>Oppgave 9 - Alternativ A </h2>
+      <p>La brukeren skrive inn en tekst som består av kommaseparerte tall mellom 0 og 9. Slik som: <br>
+        <strong>0,4,4,2,3,1,4,6,8,4,2,1,4,5,3,2,1,3,4,8,8,8,5</strong></p>
+        <p>Splitt så denne tekststrengen på komma, slik at du får en array med verdier.</p>
+        <p><strong>a)</strong> Benytt en ny array til å telle opp hvor mange ganger hvert tall mellom <strong>0</strong> og <strong>9</strong> forekommer (tips: tallene er indeksene i denne nye arrayen, og verdien er antallet), og lag så en <strong>utskrift</strong> på dette.</p>
+        <p><strong>b)</strong> Presenter en <strong>utskrift av resultater</strong>. Vil du gjør litt ekstra så presenter resultatet som et liggende søylediagram, med ulik farge på partall og oddetall (altså tallene 0-9). Tips: Dere kan lage hver søyle ved å lage en &lt;img&gt;-tagg av et bilde på 1x1 pixel, og så sette bredden på dette bildet.</p></div>
+    <div class="box1">
+        Skriv inn kommaseparerte tall mellom 0 og 9:<input type="text" id="txtInput" size="50px"></input>
+        <button type="button" id="btn">Knapp</button>
+        <p id="print">print</p>
+    
+    
+    </div>
+    
+    
+    
+</body>
+</html>
+
+

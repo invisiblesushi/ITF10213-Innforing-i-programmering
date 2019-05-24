@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Test</title>
+<link rel="stylesheet" type="text/css" media="all" href="matrix.css">
+<script>
+window.onload = oppstart;
+function oppstart(){
+    kombo();
+    
+}
+function kombo() {
+    var tall = ["1","2","3","4","5"];
+    var lengde = tall.length;
+    
+    for (var i = 0; i < lengde; i++)  {
+        
+        for (var j = 0; j < lengde; j++)  {
+        document.getElementById("utskriftTo").innerHTML += tall[i] + tall[j] + " ";
+            
+            for (var k = 0; k < lengde; k++)  {
+            document.getElementById("utskriftTre").innerHTML += tall[i] + tall[j] + tall[k] + " ";
+                
+                for (var l = 0; l < lengde; l++)  {
+                document.getElementById("utskriftFire").innerHTML += tall[i] + tall[j] + tall[k] + tall[l] + " ";
+                
+                    for (var m = 0; m < lengde; m++)  {
+                    document.getElementById("utskriftFem").innerHTML += tall[i] + tall[j] + tall[k] + tall[l] + tall[m] + " ";
+                    }
+                }
+            }
+        }
+    }
+}
+    
+</script>
+</head>
+    
+<body>
+    <div class="title">
+        <h1>Informasjonsystemer, trinn 1, infprog Oblig2</h1>
+    </div>
+    <div class="box0">
+        <h2>Oppgave 4</h2>
+        <p>Skriv ut alle tosifrede kombinasjoner av tallene 1,2,3,4 og 5, slik som 11, 12, 13, 14, 15, 21, 22 osv. (Tips: Nestede løkker). Prøv også med alle tresiftrede, firesifrede og femsifrede kombinasjoner.</p>
+    </div>
+
+    <div class="box1">
+        <h3>To siffrende kombinasjoner</h3>
+        <p id="utskriftTo"></p>
+        <h3>Tre  siffrende kombinasjoner</h3>
+        <p id="utskriftTre"></p>
+        <h3>Fire siffrende kombinasjoner</h3>
+        <p id="utskriftFire"></p>
+        <h3>Fem siffrende kombinasjoner</h3>
+        <p id="utskriftFem"></p>
+    </div>
+</body>
+</html>
+
+

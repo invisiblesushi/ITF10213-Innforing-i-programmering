@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Test</title>
+<link rel="stylesheet" type="text/css" media="all" href="style.css">
+<script>
+window.onload = start;
+function start(){    
+    document.getElementById("btn").onclick = pressed;
+}
+    
+function pressed()    {
+    var monthDays = [31, 28, 31, 30, 31, 30,  31, 31, 30, 31, 30, 31];
+    var month = ["Januar", "Februar", "Mars", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Desember"]
+    
+    var selected = parseInt(document.getElementById("txtMonth").value) - 1;
+    var length = month.length;
+    
+    for (var i = 0; i < length ; i++)    {
+        if ( i === selected ) {
+            document.getElementById("print").innerHTML = "Det er " + monthDays[selected] + " dager i " + month[selected] + "<br/>";
+            i = length;
+        }
+        else    {
+            document.getElementById("print").innerHTML = "Finner ikke " + selected + ". Prøv igjen med verdier mellom (1-12)" + "<br/>";
+        }
+        
+        
+    }
+}
+    
+    
+    
+    
+</script>
+</head>
+    
+<body>
+    <div class="title">
+        <h1>Informasjonsystemer, trinn 1, infprog Oblig2</h1>
+    </div>
+    <div class="box0">
+        <h2>Oppgave 7</h2>
+        <p>Lag en webside med en tekstboks og en knapp. Lag så en array med antall dager i hver måned. Januar skal da være på indeks 0, februar på indeks 1 osv. I tekstboksen skal du så kunne skrive inn nummeret på en måned (1-12), og få ut antall dager i denne måneden. Du kan her se bort i fra skuddår. (Altså samme oppgave som på oppgavesett 2, men denne gang skal dere bruke en array og ikke if-tester).</p>
+        <p>Utvid så koden til å også gi ut navnet på måneden hentet fra en annen array. </p>  
+    </div>
+
+    <div class="box1">
+        Måned nummer: <input type="text" id="txtMonth"></input>
+        <button id="btn">Knapp</button>
+        <p id="print">utskrift </p>
+
+    </div>
+    
+    
+    
+</body>
+</html>
+
+
